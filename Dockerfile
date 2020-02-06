@@ -6,11 +6,11 @@ RUN set -eux ; \
     apt-get install -yqq libmcrypt-dev libpq-dev rsync ssh git curl;
 
 RUN set -eux ; \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    apt install nodejs;
+
+RUN set -eux ; \
     docker-php-ext-install sockets zip pdo pdo_pgsql pgsql;
 
 RUN set -eux ; \
     docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql;
-
-RUN set -eux ; \
-    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
-    apt install nodejs;
