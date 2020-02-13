@@ -12,7 +12,8 @@ RUN set -eux ; \
     curl                    \
     libzip-dev              \
     npm                     \
-    unzip
+    unzip                   \
+    composer
 
 RUN set -eux ; \
     docker-php-ext-install sockets zip pdo pdo_pgsql pgsql
