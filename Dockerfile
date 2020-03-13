@@ -13,11 +13,10 @@ RUN set -eux ; \
     libzip-dev              \
     npm                     \
     unzip                   \
-    wget                    \
-    php-gd
+    wget
 
 RUN set -eux ; \
-    docker-php-ext-install sockets zip pdo pdo_pgsql pgsql
+    docker-php-ext-install sockets zip pdo pdo_pgsql pgsql gd
 
 RUN set -eux ; \
     docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsq
