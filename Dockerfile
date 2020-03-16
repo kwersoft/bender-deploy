@@ -6,6 +6,7 @@ RUN set -eux ; \
     apt-get install -yqq    \
     libmcrypt-dev           \
     libpq-dev               \
+    libpng-dev              \
     rsync                   \
     ssh                     \
     git                     \
