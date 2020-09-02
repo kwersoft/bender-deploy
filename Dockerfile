@@ -34,3 +34,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 RUN wget https://phar.phpunit.de/phpunit-6.0.phar && \
         chmod +x phpunit-6.0.phar && \
         mv phpunit-6.0.phar /usr/local/bin/phpunit
+        
+COPY php.ini /usr/local/etc/php/php.ini
+COPY php_browscap.ini /usr/local/etc/php/browscap.ini
