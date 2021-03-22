@@ -2,17 +2,18 @@ FROM php:7-fpm-alpine
 MAINTAINER Serg Bragin <bsm@kcentr.ru>
 
 RUN apk add --update	\
-    libmcrypt-dev		\
-    postgresql-dev		\
-    libpng-dev			\
-    rabbitmq-c-dev		\
-	libxml2-dev			\
-    libzip-dev			\
-    unzip				\
-    wget				\
-	git					\
-    curl				\
-	net-tools
+    libmcrypt-dev	\
+    postgresql-dev	\
+    libpng-dev		\
+    rabbitmq-c-dev	\
+    libxml2-dev		\
+    libzip-dev		\
+    unzip		\
+    wget		\
+    git			\
+    curl		\
+    rsync		\
+    net-tools
 
 RUN set -eux ; \
     docker-php-ext-install sockets zip pdo pdo_pgsql pgsql gd
