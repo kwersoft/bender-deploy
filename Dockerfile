@@ -16,11 +16,9 @@ RUN apk add --update	\
     openssh-client  \
     net-tools
 
-RUN set -eux ; \
-    docker-php-ext-install sockets zip pdo pdo_pgsql pgsql gd
+RUN docker-php-ext-install sockets zip pdo pdo_pgsql pgsql gd
 
-RUN set -eux ; \
-    docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsq
+RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsq
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
@@ -36,3 +34,4 @@ RUN wget https://phar.phpunit.de/phpunit-6.0.phar && \
         mv phpunit-6.0.phar /usr/local/bin/phpunit
         
 COPY php.ini /usr/local/etc/php/php.ini
+RUN echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
