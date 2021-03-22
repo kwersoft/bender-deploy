@@ -13,6 +13,7 @@ RUN apk add --update	\
     git			\
     curl		\
     rsync		\
+    openssh-client  \
     net-tools
 
 RUN set -eux ; \
